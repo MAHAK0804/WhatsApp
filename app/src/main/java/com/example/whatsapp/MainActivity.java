@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
             auth.signOut();
             Intent intent = new Intent(MainActivity.this,SignInActivity.class);
             startActivity(intent);
+            finish();
         } else if (item.getItemId()==R.id.settings) {
             Toast.makeText(this, "Settings", Toast.LENGTH_SHORT).show();
         }

@@ -86,6 +86,7 @@ public class SignInActivity extends AppCompatActivity {
                                 if(task.isSuccessful()){
                                     Intent intent = new Intent(SignInActivity.this,MainActivity.class);
                                     startActivity(intent);
+                                    finish();
                                 }
                                 else {
                                     Toast.makeText(SignInActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
@@ -111,6 +112,7 @@ binding.google.setOnClickListener(new View.OnClickListener() {
         if(auth.getCurrentUser()!= null){
             Intent intent = new Intent(SignInActivity.this,MainActivity.class);
             startActivity(intent);
+            finish();
         }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -169,6 +171,7 @@ binding.google.setOnClickListener(new View.OnClickListener() {
 
                             Intent intent = new Intent(SignInActivity.this,MainActivity.class);
                             startActivity(intent);
+                            finish();
                             Toast.makeText(SignInActivity.this, "Sign In with Google", Toast.LENGTH_SHORT).show();
                             updateUI(user);
                         } else {
